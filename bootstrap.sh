@@ -45,6 +45,10 @@ sudo apt-get -qq install build-essential fortune make libssl-dev zlib1g-dev libb
 print_header "Installing Git"
 sudo apt-get -qq install git-core
 
+# Vim
+print_header "Installing Vim"
+sudo apt-get -qq install vim
+
 # Atom
 print_header "Installing Atom"
 sudo apt-get install atom
@@ -83,6 +87,7 @@ pyenv global 3.7.6
 print_header "pip installing packaging tools and datakit"
 pip install --quiet --upgrade pip
 pip install pipenv
+pip install csvkit
 pip install datakit-core datakit-project datakit-github
 
 # postgres
