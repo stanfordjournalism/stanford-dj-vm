@@ -28,7 +28,10 @@ sudo echo "deb http://cran.rstudio.com/bin/linux/ubuntu bionic/" | sudo tee -a /
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key E084DAB9
 
 # add atom to repository sources
-sudo add-apt-repository ppa:webupd8team/atom
+echo "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main" | sudo tee /etc/apt/sources.list.d/atom.list
+
+# add gpg key for atom
+wget -qO - https://packagecloud.io/AtomEditor/atom/gpgkey | sudo apt-key add -
 
 #Update apt-get and upgrade packages
 sudo apt-get -qq update
