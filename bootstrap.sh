@@ -88,6 +88,7 @@ print_header "pip installing packaging tools and datakit"
 pip install --quiet --upgrade pip
 pip install pipenv
 pip install csvkit
+pip install ipython
 pip install datakit-core datakit-project datakit-github
 
 # postgres
