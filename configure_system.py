@@ -97,7 +97,7 @@ def configure_git(home, name, email):
 
 def get_bin_path(name):
     return subprocess\
-            .check_output(['which', 'name'])\
+            .check_output(['which', name])\
             .decode('utf-8').strip()
 
 
