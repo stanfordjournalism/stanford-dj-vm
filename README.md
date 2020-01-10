@@ -28,6 +28,15 @@ curl -s https://github.com/stanfordjournalism/stanford-dj-vm/blob/master/bootstr
 chmod a+x bootstrap.s
 . ./bootstrap.sh
 
+# Below script should only be run by end users
 curl -s https://github.com/stanfordjournalism/stanford-dj-vm/blob/master/configure_system.py > configure_system.py
-python configure_system.py
+```
+
+## User configuration
+
+Every user should `configure_system.py` to generate ssh keys and
+configure git and datakit.
+
+```
+python ~/setup/configure_system.py
 ```
