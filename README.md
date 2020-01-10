@@ -34,7 +34,7 @@ chmod a+x bootstrap.s
 . ./bootstrap.sh
 
 # Below script should only be run by end users
-curl -s https://raw.githubusercontent.com/stanfordjournalism/stanford-dj-vm/master/configure_system.py > configure_systemp.py
+curl -s https://raw.githubusercontent.com/stanfordjournalism/stanford-dj-vm/master/configure_system.py > configure_system.py
 ```
 ### Export OVF appliance
 
