@@ -16,8 +16,8 @@ def main():
     name = ask_confirm("Full name? ")
     email = ask_confirm("Email? ")
     create_configs(name, email)
-    generate_ssh_keys()
-    configure_git()
+    generate_ssh_keys(email)
+    configure_git(name, email)
 
 def ask_confirm(question):
     answer = input(question)
@@ -29,22 +29,25 @@ def ask_confirm(question):
         sys.exit("Exiting. Please try again.")
 
 def create_configs(user, email):
+    home = os.path.expanduser('~')
     cc_config = "default_context:\n    full_name: {}\n    email: {}"
     dkit_proj_config = {"default_template": ""}
     dkit_gh_config = {"github_api_key": "GITHUB_API_TOKEN"}
     configs = {
-        '~/.cookiecutterrc': cc_config,
-        '~/.datakit/plugins/datakit-project/config.json': dkit_proj_config,
-        '~/.datakit/plugins/datakit-github/config.json': dkit_gh_config,
+        '.cookiecutterrc': cc_config,
+        '.datakit/plugins/datakit-project/config.json': dkit_proj_config,
+        '.datakit/plugins/datakit-github/config.json': dkit_gh_config,
     }
     for path, settings in configs.items():
-        if os.path.exists(path):
-            print("{} already exists. Skipping!")
+        final_path = os.path.join(home, path)
+        if os.path.exists(final_path):
+            print("{} already exists. Skipping!".format(final_path))
             continue
-        if 'cookiecutterrc' in path:
+        if 'cookiecutterrc' in final_path:
             settings = settings.format(user, email)
-        create_dir(path)
-        write_json(path, settings)
+            write_file(final_path, settings)
+        create_dir(final_path)
+        write_json(final_path, settings)
 
 def create_dir(path):
     pth = os.path.dirname(path)
@@ -60,7 +63,7 @@ def write_json(path, content):
         json.dump(content, f, indent=4)
     print("Created {}".format(path))
 
-def generate_ssh_keys():
+def generate_ssh_keys(email):
     if os.path.exists("~/.ssh/id_rsa"):
         print("SSH keys already generated. Skipping!")
         return
