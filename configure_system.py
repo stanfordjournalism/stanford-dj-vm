@@ -69,21 +69,13 @@ def write_json(path, content):
     print("Created {}".format(path))
 
 def generate_ssh_keys(home, email):
-    ssh_dir = os.path.join(home, '.ssh')
-    private_key = os.path.join(ssh_dir, 'id_rsa')
+    private_key = os.path.join(ssh_dir, '.ssh/id_rsa')
     if os.path.exists(private_key):
         print("SSH keys already generated. Skipping!")
-        return
     else:
-        try:
-            os.mkdir(ssh_dir, mode=0700)
-        except FileExistsError:
-            pass
         subprocess.check_call([
-            'ssh–keygen',
-            '–t', 'rsa', '4096',
-            '-N', "",
-            "-f", private_key
+            'ssh–keygen', '–t', 'rsa', '4096',
+            '-N', "", "-f", private_key
         ])
 
 def configure_git(home, name, email):
