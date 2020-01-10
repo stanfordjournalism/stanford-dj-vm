@@ -110,11 +110,17 @@ def get_bin_path(name):
 
 def next_steps():
     print('\n\n=== Next Steps ===')
-    url = '    https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line'
-    print('\n(1) Create a GitHub API token by following steps here:')
-    print(url + '\n')
+    print('\n(1) Upload your ssh public key to GitHub by following these steps:')
+    ssh_key_help = '    https://help.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account'
+    print(ssh_token_help + '\n')
+
+    api_token_help = '    https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line'
+    print(api_token_help + '\n')
+    print('\n(2) Create a GitHub API token by following steps here:')
+    print(api_token_help + '\n')
+
     config = '    ~/.datakit/plugins/datakit-github/config.json'
-    print('\n(2) Add the API token to the below config file:')
+    print('\n(3) Add the API token to the below config file:')
     print(config, '\n')
 
 if __name__ == '__main__':
