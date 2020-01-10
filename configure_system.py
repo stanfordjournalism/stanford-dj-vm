@@ -74,10 +74,13 @@ def generate_ssh_keys(home, email):
         print("SSH keys already generated. Skipping!")
     else:
         binary = get_bin_path('ssh-keygen')
-        subprocess.check_call([
+        subprocess.call([
             binary,
-            '–t', 'rsa', '4096',
-            '-N', "", "-f", private_key
+            '-q',
+            '–t', 'rsa',
+            '-b', '4096',
+            '-N', '',
+            '-f', private_key
         ])
 
 def configure_git(home, name, email):
