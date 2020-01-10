@@ -1,6 +1,7 @@
 '''
 This script helps configure datakit, git and ssh
-on a fresh Xubuntu build.
+on a fresh Xubuntu build. Also designed to work
+on Macs.
 
 Usage:
     python configure_system.py
@@ -19,6 +20,7 @@ def main():
     create_configs(home_dir, name, email)
     generate_ssh_keys(home_dir, email)
     configure_git(home_dir, name, email)
+    next_steps()
 
 def ask_confirm(question):
     answer = input(question)
@@ -106,6 +108,14 @@ def get_bin_path(name):
             .check_output(['which', name])\
             .decode('utf-8').strip()
 
+def next_steps():
+    print('==== Next Steps ===')
+    url = '\thttps://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line'
+    print('(1) Create a GitHub API token by following steps here:')
+    print(url)
+    config = '\t~/.datakit/plugins/datakit-github/config.json'
+    print('(2) Add the API token to the below config file:')
+    print(config)
 
 if __name__ == '__main__':
     main()
