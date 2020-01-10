@@ -31,8 +31,18 @@ chmod a+x bootstrap.s
 # Below script should only be run by end users
 curl -s https://github.com/stanfordjournalism/stanford-dj-vm/blob/master/configure_system.py > configure_system.py
 ```
+## Export OVF appliance
 
-## User configuration
+[Exporting an Appliance in OVF
+Format](https://www.virtualbox.org/manual/ch01.html#ovf-export-appliance)
+
+## User docs
+
+### Import appliance
+
+[Importing an Appliance in OVF Format](https://www.virtualbox.org/manual/ch01.html#ovf-import-appliance)
+
+### Configuration
 
 Every user should run `configure_system.py` to generate ssh keys and
 configure git and datakit.
