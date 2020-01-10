@@ -73,8 +73,10 @@ def generate_ssh_keys(home, email):
     if os.path.exists(private_key):
         print("SSH keys already generated. Skipping!")
     else:
+        binary = get_bin_path('ssh-keygen')
         subprocess.check_call([
-            'ssh–keygen', '–t', 'rsa', '4096',
+            binary,
+            '–t', 'rsa', '4096',
             '-N', "", "-f", private_key
         ])
 
@@ -83,14 +85,21 @@ def configure_git(home, name, email):
     if os.path.exists(gitconfig):
         print("Git user name/email already seem to be configured. Skipping!")
         return
+    binary = get_bin_path('git')
     subprocess.check_call([
-        'git', 'config', '--global',
+        binary, 'config', '--global',
         'user.name', '"{}"'.format(name)
     ])
     subprocess.check_call([
-        'git', 'config', '--global',
+        binary, 'config', '--global',
         'user.email', '"{}"'.format(email)
     ])
+
+def get_bin_path(name):
+    return subprocess\
+            .check_output(['which', 'name'])\
+            .decode('utf-8').strip()
+
 
 if __name__ == '__main__':
     main()
