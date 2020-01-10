@@ -14,8 +14,13 @@ See `bootstrap.sh` for installed software.
 
 ## Building Xubuntu from Scratch
 
+### Create the VM
+
 Generally, follow the steps outlined in CIR's [HOWTO][]
 for details on downloading Xubuntu and creating a VM.
+
+
+### Provision the VM
 
 Once you have a clean VM, execute the below shell commands **inside the Xubuntu guest**
 to provision the machine:
@@ -31,7 +36,7 @@ chmod a+x bootstrap.s
 # Below script should only be run by end users
 curl -s https://github.com/stanfordjournalism/stanford-dj-vm/blob/master/configure_system.py > configure_system.py
 ```
-## Export OVF appliance
+### Export OVF appliance
 
 [Exporting an Appliance in OVF
 Format](https://www.virtualbox.org/manual/ch01.html#ovf-export-appliance)
