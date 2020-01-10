@@ -30,7 +30,11 @@ def ask_confirm(question):
 
 def create_configs(user, email):
     home = os.path.expanduser('~')
-    cc_config = "default_context:\n    full_name: {}\n    email: {}"
+    cc_config = "\n".join([
+        "default_context:",
+        "    full_name: {}".format(user),
+        "    email: {}".format(email)
+    ])
     dkit_proj_config = {"default_template": ""}
     dkit_gh_config = {"github_api_key": "GITHUB_API_TOKEN"}
     configs = {
@@ -46,6 +50,7 @@ def create_configs(user, email):
         if 'cookiecutterrc' in final_path:
             settings = settings.format(user, email)
             write_file(final_path, settings)
+            continue
         create_dir(final_path)
         write_json(final_path, settings)
 
