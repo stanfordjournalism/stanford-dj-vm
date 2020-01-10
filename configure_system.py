@@ -79,6 +79,7 @@ def generate_ssh_keys(home, email):
             '-q',
             '–t', 'rsa',
             '-b', '4096',
+            '-C', email,
             '-N', '',
             '-f', private_key
         ])
