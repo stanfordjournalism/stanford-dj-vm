@@ -33,6 +33,19 @@ python ~/setup/configure_system.py
 
 [Generate a GitHub personal API token]: https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line
 
+## User/Password
+
+The VM's user and password are both `stanford`.
+
+The system is configured not to require a login. 
+
+However, you will will need this password when installing software through the graphical software manager or on the command line. For example:
+
+```
+sudo apt-get install tree
+```
+
+ 
 ## Detailed technical info
 
 Details on how this VM was created are [on GitHub](https://github.com/stanfordjournalism/stanford-dj-vm).  For a full list of software added to this machine, see the [bootstrap](https://github.com/stanfordjournalism/stanford-dj-vm/blob/master/bootstrap.sh) and [configuration](https://github.com/stanfordjournalism/stanford-dj-vm/blob/master/configure_system.py) scripts.
