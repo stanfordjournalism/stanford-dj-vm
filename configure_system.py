@@ -109,7 +109,7 @@ def get_bin_path(name):
             .decode('utf-8').strip()
 
 def next_steps():
-    print('\n\n==== Next Steps ===')
+    print('\n\n=== Next Steps ===')
     url = '    https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line'
     print('\n(1) Create a GitHub API token by following steps here:')
     print(url + '\n')
