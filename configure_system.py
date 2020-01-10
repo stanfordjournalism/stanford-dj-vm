@@ -109,13 +109,13 @@ def get_bin_path(name):
             .decode('utf-8').strip()
 
 def next_steps():
-    print('==== Next Steps ===')
-    url = '\thttps://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line'
-    print('(1) Create a GitHub API token by following steps here:')
-    print(url)
-    config = '\t~/.datakit/plugins/datakit-github/config.json'
-    print('(2) Add the API token to the below config file:')
-    print(config)
+    print('\n\n==== Next Steps ===')
+    url = '    https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line'
+    print('\n(1) Create a GitHub API token by following steps here:')
+    print(url + '\n')
+    config = '    ~/.datakit/plugins/datakit-github/config.json'
+    print('\n(2) Add the API token to the below config file:')
+    print(config, '\n')
 
 if __name__ == '__main__':
     main()
