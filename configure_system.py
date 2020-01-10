@@ -110,12 +110,12 @@ def get_bin_path(name):
 
 def next_steps():
     print('\n\n=== Next Steps ===')
-    print('\n(1) Upload your ssh public key to GitHub by following these steps:')
+
     ssh_key_help = '    https://help.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account'
-    print(ssh_token_help + '\n')
+    print('\n(1) Upload your ssh public key to GitHub by following these steps:')
+    print(ssh_key_help + '\n')
 
     api_token_help = '    https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line'
-    print(api_token_help + '\n')
     print('\n(2) Create a GitHub API token by following steps here:')
     print(api_token_help + '\n')
 
