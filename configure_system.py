@@ -51,12 +51,12 @@ def create_dir(path):
     os.makedirs(pth, exist_ok=True)
 
 def write_file(path, content):
-    with open(path) as f:
+    with open(path, 'w') as f:
         f.write(content)
     print("Created {}".format(path))
 
 def write_json(path, content):
-    with open(path) as f:
+    with open(path, 'w') as f:
         json.dump(content, f, indent=4)
     print("Created {}".format(path))
 
