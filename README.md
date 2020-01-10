@@ -19,11 +19,9 @@ See `bootstrap.sh` for installed software.
 Generally, follow the steps outlined in CIR's [HOWTO][]
 for details on downloading Xubuntu and creating a VM.
 
-
 ### Provision the VM
 
-Once you have a clean VM, execute the below shell commands **inside the Xubuntu guest**
-to provision the machine:
+Once you have a clean VM, execute the below shell commands **inside the Xubuntu guest** to provision the machine:
 
 ```
 mkdir ~/setup
@@ -33,25 +31,21 @@ curl -s https://github.com/stanfordjournalism/stanford-dj-vm/blob/master/bootstr
 chmod a+x bootstrap.s
 . ./bootstrap.sh
 
-# Below script should only be run by end users
+# Provision configuration script and User Manual for end users
 curl -s https://raw.githubusercontent.com/stanfordjournalism/stanford-dj-vm/master/configure_system.py > configure_system.py
+
+wget -O ~/Desktop/USER_MANUAL.pdf https://raw.githubusercontent.com/stanfordjournalism/stanford-dj-vm/master/USER_MANUAL.pdf 
 ```
+
 ### Export OVF appliance
 
 [Exporting an Appliance in OVF
 Format](https://www.virtualbox.org/manual/ch01.html#ovf-export-appliance)
 
-## User docs
+## End user docs
 
-### Import appliance
+> These docs assume the use of VirtualBox.
 
-[Importing an Appliance in OVF Format](https://www.virtualbox.org/manual/ch01.html#ovf-import-appliance)
-
-### Configuration
-
-Every user should run `configure_system.py` to generate ssh keys and
-configure git and datakit.
-
-```
-python ~/setup/configure_system.py
-```
+* Download the OVF appliance
+* [Import the appliance](https://www.virtualbox.org/manual/ch01.html#ovf-import-appliance)
+* Once the virtual machine is running, perform the steps outlined in the `Setup` section of the [USER_MANUAL.pdf](USER_MANUAL.pdf). A copy of the user manual is available on the Xubuntu desktop.
