@@ -34,7 +34,7 @@ curl -s https://github.com/stanfordjournalism/stanford-dj-vm/blob/master/configu
 
 ## User configuration
 
-Every user should `configure_system.py` to generate ssh keys and
+Every user should run `configure_system.py` to generate ssh keys and
 configure git and datakit.
 
 ```
