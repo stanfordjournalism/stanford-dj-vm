@@ -89,6 +89,7 @@ pip install --quiet --upgrade pip
 pip install pipenv
 pip install csvkit
 pip install ipython
+pip install ipdb
 pip install datakit-core datakit-project datakit-github
 
 # postgres
