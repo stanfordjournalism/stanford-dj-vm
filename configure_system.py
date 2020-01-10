@@ -82,6 +82,7 @@ def generate_ssh_keys(home, email):
             '-N', '',
             '-f', private_key
         ])
+        print("SSH keys generated in ~/.ssh")
 
 def configure_git(home, name, email):
     gitconfig = os.path.join(home, '.gitconfig')
@@ -91,12 +92,13 @@ def configure_git(home, name, email):
     binary = get_bin_path('git')
     subprocess.check_call([
         binary, 'config', '--global',
-        'user.name', '"{}"'.format(name)
+        'user.name', '{}'.format(name)
     ])
     subprocess.check_call([
         binary, 'config', '--global',
-        'user.email', '"{}"'.format(email)
+        'user.email', '{}'.format(email)
     ])
+    print("Git user name/email configured")
 
 def get_bin_path(name):
     return subprocess\
