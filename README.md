@@ -27,18 +27,21 @@ Once you have a clean VM, execute the below shell commands **inside the Xubuntu 
 mkdir ~/setup
 cd ~/setup
 
-curl -s https://github.com/stanfordjournalism/stanford-dj-vm/blob/master/bootstrap.sh > bootstrap.sh
+curl -O https://raw.githubusercontent.com/stanfordjournalism/stanford-dj-vm/master/bootstrap.sh
 chmod a+x bootstrap.s
 . ./bootstrap.sh
 
 # Provision configuration script and User Manual for end users
-curl -s https://raw.githubusercontent.com/stanfordjournalism/stanford-dj-vm/master/configure_system.py > configure_system.py
+curl -O https://raw.githubusercontent.com/stanfordjournalism/stanford-dj-vm/master/configure_system.py
 
-wget -O ~/Desktop/USER_MANUAL.pdf https://raw.githubusercontent.com/stanfordjournalism/stanford-dj-vm/master/USER_MANUAL.pdf 
+cd ~/Desktop && curl -O https://raw.githubusercontent.com/stanfordjournalism/stanford-dj-vm/master/USER_MANUAL.pdf 
 ```
 
 ### Export OVF appliance
 
+> Before exporting the machine, you must power it down. If the machine
+> is saved in a running state, you will get a warning during the export process.
+> 
 [Exporting an Appliance in OVF
 Format](https://www.virtualbox.org/manual/ch01.html#ovf-export-appliance)
 
