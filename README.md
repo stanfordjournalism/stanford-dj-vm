@@ -14,9 +14,7 @@ See [bootstrap.sh](bootstrap.sh) for details on installed software, or install t
 
 > These docs assume the use of VirtualBox, although the VM should also work with VMWare and any virtualization software that supports OVF 1.0.
 
-**Download pre-built [stanford-dj-vm](https://www.dropbox.com/s/c5gfwrm3ofmejk5/stanford-dj-vm.ova?dl=0)**.
-
-* Download the OVF appliance
+* Download the pre-built [stanford-dj-vm](https://www.dropbox.com/s/c5gfwrm3ofmejk5/stanford-dj-vm.ova?dl=0) OVF appliance
 * [Import the appliance](https://www.virtualbox.org/manual/ch01.html#ovf-import-appliance)
 * Once the virtual machine is running, perform the steps outlined in the `Setup` section of the [USER_MANUAL.pdf](USER_MANUAL.pdf). A copy of the user manual is available on the Xubuntu desktop.
 
