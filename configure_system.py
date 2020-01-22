@@ -9,6 +9,7 @@ Usage:
 '''
 import os
 import json
+import shlex
 import subprocess
 import sys
 
@@ -76,15 +77,10 @@ def generate_ssh_keys(home, email):
         print("SSH keys already generated. Skipping!")
     else:
         binary = get_bin_path('ssh-keygen')
-        subprocess.call([
-            binary,
-            '-q',
-            '–t', 'rsa',
-            '-b', '4096',
-            '-C', email,
-            '-N', '',
-            '-f', private_key
-        ])
+        cmd = "{} -q -t rsa -b 4096 -C {} -N '' -f {}".format(
+            binary, email, private_key)
+        parsed_cmd = shlex.split(cmd)
+        subprocess.call(parsed_cmd)
         print("SSH keys generated in ~/.ssh")
 
 def configure_git(home, name, email):
