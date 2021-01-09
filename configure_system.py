@@ -47,7 +47,7 @@ def create_configs(home, user, email):
     }
     for path, settings in configs.items():
         final_path = os.path.join(home, path)
-        if os.path.exists(final_path):
+        if file_exists(final_path) and file_has_content(final_path):
             print("{} already exists. Skipping!".format(final_path))
             continue
         if 'cookiecutterrc' in final_path:
@@ -56,6 +56,13 @@ def create_configs(home, user, email):
             continue
         create_dir(final_path)
         write_json(final_path, settings)
+
+
+def file_exists(file_path):
+    return os.path.exists(file_path)
+
+def file_has_content(file_path):
+    return os.path.getsize(file_path) > 0
 
 def create_dir(path):
     pth = os.path.dirname(path)
