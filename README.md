@@ -23,7 +23,7 @@ See [bootstrap.sh](bootstrap.sh) for details on installed software, or install t
 
 ### Create the VM
 
-Generally, follow the steps outlined in CIR's [HOWTO][]
+Generally, follow the steps outlined in CIR's [instructions][]
 for details on downloading Xubuntu and creating a VM.
 
 ### Provision the VM
