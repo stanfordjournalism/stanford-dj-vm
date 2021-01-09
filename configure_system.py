@@ -95,6 +95,7 @@ def configure_git(home, name, email):
     if os.path.exists(gitconfig):
         print("Git user name/email already seem to be configured. Skipping!")
         return
+    print("Configuring %s".format(gitconfig))
     binary = get_bin_path('git')
     subprocess.check_call([
         binary, 'config', '--global',
