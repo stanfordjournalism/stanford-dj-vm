@@ -80,7 +80,8 @@ def write_json(path, content):
 
 def generate_ssh_keys(home, email):
     private_key = os.path.join(home, '.ssh/id_rsa')
-    if os.path.exists(private_key):
+    private_ed_key = os.path.join(home, '.ssh/id_ed25519')
+    if os.path.exists(private_key) or os.path.exists(private_ed_key):
         print("SSH keys already generated. Skipping!")
     else:
         binary = get_bin_path('ssh-keygen')
